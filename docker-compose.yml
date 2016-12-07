@@ -1,4 +1,4 @@
 version: '2'
 services:
-  rabbitmq:
+  scrapy-py:
     image: registry.cn-hangzhou.aliyuncs.com/c3t3m3/docker-scrapy:aliyun
