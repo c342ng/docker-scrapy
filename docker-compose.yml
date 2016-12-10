@@ -2,3 +2,11 @@ version: '2'
 services:
   scrapy-py:
     image: registry.cn-hangzhou.aliyuncs.com/c3t3m3/docker-scrapy:aliyun
+    links:
+        - "scrapy-mq:redis-server"
+    volumes:
+        - /home/ubuntu/python/py-scrapy/:/data/python/:rw
+  scrapy-mq:
+    image: registry.cn-hangzhou.aliyuncs.com/c3t3m3/docker-redis:aliyun
+    ports:
+        - "6380:6379"
